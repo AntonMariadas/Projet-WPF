@@ -1,0 +1,18 @@
+﻿<Window x:Class="Authentification.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Authentification"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="entrer" Content="Entrer" HorizontalAlignment="Left" Margin="199,172,0,0" VerticalAlignment="Top" Width="83" Height="45"/>
+        <Button Content="Annuler" HorizontalAlignment="Left" Margin="501,172,0,0" VerticalAlignment="Top" Width="75" Height="45"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="222,39,0,0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtLogin" HorizontalAlignment="Left" Height="23" Margin="272,92,0,0" TextWrapping="Wrap" Text="Mot de passe" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="272,92,0,0" TextWrapping="Wrap" Text="Mot de passe" VerticalAlignment="Top" Width="120"/>
+        
+
+    </Grid>
+</Window>

@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MaVideothequeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Emprunt">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUtilisateur" Type="int" />
+    <Property Name="IdFilm" Type="int" />
+    <Property Name="DateEmprunt" Type="date" />
+    <Property Name="DateRetour" Type="date" />
+    <Property Name="Statut" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Film">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Titre" Type="nvarchar" MaxLength="200" />
+    <Property Name="Summary" Type="nvarchar" MaxLength="200" />
+    <Property Name="Duree" Type="int" />
+    <Property Name="ActeurP" Type="nvarchar" MaxLength="100" />
+    <Property Name="AutresActeurs" Type="nvarchar" MaxLength="200" />
+    <Property Name="affiche" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="FilmGenre">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdFilm" Type="int" />
+    <Property Name="IdGenre" Type="int" />
+  </EntityType>
+  <EntityType Name="FilmPays">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdFilm" Type="int" />
+    <Property Name="IdPays" Type="int" />
+    <Property Name="Info" Type="nvarchar" MaxLength="200" />
+    <Property Name="DateTournage" Type="date" />
+  </EntityType>
+  <EntityType Name="Genre">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Libelle" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PAYS">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Libelle" Type="nvarchar" MaxLength="100" />
+    <Property Name="photo" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Trace">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Info" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Utilisateur">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nom" Type="nvarchar" MaxLength="50" />
+    <Property Name="Prenom" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="MotDePasse" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <Association Name="FK__Emprunt__IdFilm__5CD6CB2B">
+    <End Role="Film" Type="Self.Film" Multiplicity="0..1" />
+    <End Role="Emprunt" Type="Self.Emprunt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Film">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Emprunt">
+        <PropertyRef Name="IdFilm" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Emprunt__IdUtili__5BE2A6F2">
+    <End Role="Utilisateur" Type="Self.Utilisateur" Multiplicity="0..1" />
+    <End Role="Emprunt" Type="Self.Emprunt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Utilisateur">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Emprunt">
+        <PropertyRef Name="IdUtilisateur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FilmGenre__IdFil__5812160E">
+    <End Role="Film" Type="Self.Film" Multiplicity="0..1" />
+    <End Role="FilmGenre" Type="Self.FilmGenre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Film">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FilmGenre">
+        <PropertyRef Name="IdFilm" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FilmGenre__IdGen__59063A47">
+    <End Role="Genre" Type="Self.Genre" Multiplicity="0..1" />
+    <End Role="FilmGenre" Type="Self.FilmGenre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genre">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FilmGenre">
+        <PropertyRef Name="IdGenre" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FilmPays__IdFilm__52593CB8">
+    <End Role="Film" Type="Self.Film" Multiplicity="0..1" />
+    <End Role="FilmPays" Type="Self.FilmPays" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Film">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FilmPays">
+        <PropertyRef Name="IdFilm" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FilmPays__IdPays__534D60F1">
+    <End Role="PAYS" Type="Self.PAYS" Multiplicity="0..1" />
+    <End Role="FilmPays" Type="Self.FilmPays" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAYS">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FilmPays">
+        <PropertyRef Name="IdPays" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MaVideothequeModelStoreContainer">
+    <EntitySet Name="Emprunt" EntityType="Self.Emprunt" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Film" EntityType="Self.Film" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FilmGenre" EntityType="Self.FilmGenre" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FilmPays" EntityType="Self.FilmPays" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Genre" EntityType="Self.Genre" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PAYS" EntityType="Self.PAYS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Trace" EntityType="Self.Trace" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Utilisateur" EntityType="Self.Utilisateur" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Emprunt__IdFilm__5CD6CB2B" Association="Self.FK__Emprunt__IdFilm__5CD6CB2B">
+      <End Role="Film" EntitySet="Film" />
+      <End Role="Emprunt" EntitySet="Emprunt" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Emprunt__IdUtili__5BE2A6F2" Association="Self.FK__Emprunt__IdUtili__5BE2A6F2">
+      <End Role="Utilisateur" EntitySet="Utilisateur" />
+      <End Role="Emprunt" EntitySet="Emprunt" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FilmGenre__IdFil__5812160E" Association="Self.FK__FilmGenre__IdFil__5812160E">
+      <End Role="Film" EntitySet="Film" />
+      <End Role="FilmGenre" EntitySet="FilmGenre" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FilmGenre__IdGen__59063A47" Association="Self.FK__FilmGenre__IdGen__59063A47">
+      <End Role="Genre" EntitySet="Genre" />
+      <End Role="FilmGenre" EntitySet="FilmGenre" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FilmPays__IdFilm__52593CB8" Association="Self.FK__FilmPays__IdFilm__52593CB8">
+      <End Role="Film" EntitySet="Film" />
+      <End Role="FilmPays" EntitySet="FilmPays" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FilmPays__IdPays__534D60F1" Association="Self.FK__FilmPays__IdPays__534D60F1">
+      <End Role="PAYS" EntitySet="PAYS" />
+      <End Role="FilmPays" EntitySet="FilmPays" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MaVideothequeModelStoreContainer" CdmEntityContainer="MaVideothequeEntities">
+    <EntitySetMapping Name="Emprunt">
+      <EntityTypeMapping TypeName="MaVideothequeModel.Emprunt">
+        <MappingFragment StoreEntitySet="Emprunt">
+          <ScalarProperty Name="Statut" ColumnName="Statut" />
+          <ScalarProperty Name="DateRetour" ColumnName="DateRetour" />
+          <ScalarProperty Name="DateEmprunt" ColumnName="DateEmprunt" />
+          <ScalarProperty Name="IdFilm" ColumnName="IdFilm" />
+          <ScalarProperty Name="IdUtilisateur" ColumnName="IdUtilisateur" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Film">
+      <EntityTypeMapping TypeName="MaVideothequeModel.Film">
+        <MappingFragment StoreEntitySet="Film">
+          <ScalarProperty Name="affiche" ColumnName="affiche" />
+          <ScalarProperty Name="AutresActeurs" ColumnName="AutresActeurs" />
+          <ScalarProperty Name="ActeurP" ColumnName="ActeurP" />
+          <ScalarProperty Name="Duree" ColumnName="Duree" />
+          <ScalarProperty Name="Summary" ColumnName="Summary" />
+          <ScalarProperty Name="Titre" ColumnName="Titre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FilmGenre">
+      <EntityTypeMapping TypeName="MaVideothequeModel.FilmGenre">
+        <MappingFragment StoreEntitySet="FilmGenre">
+          <ScalarProperty Name="IdGenre" ColumnName="IdGenre" />
+          <ScalarProperty Name="IdFilm" ColumnName="IdFilm" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FilmPays">
+      <EntityTypeMapping TypeName="MaVideothequeModel.FilmPays">
+        <MappingFragment StoreEntitySet="FilmPays">
+          <ScalarProperty Name="DateTournage" ColumnName="DateTournage" />
+          <ScalarProperty Name="Info" ColumnName="Info" />
+          <ScalarProperty Name="IdPays" ColumnName="IdPays" />
+          <ScalarProperty Name="IdFilm" ColumnName="IdFilm" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genre">
+      <EntityTypeMapping TypeName="MaVideothequeModel.Genre">
+        <MappingFragment StoreEntitySet="Genre">
+          <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PAYS">
+      <EntityTypeMapping TypeName="MaVideothequeModel.PAYS">
+        <MappingFragment StoreEntitySet="PAYS">
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trace">
+      <EntityTypeMapping TypeName="MaVideothequeModel.Trace">
+        <MappingFragment StoreEntitySet="Trace">
+          <ScalarProperty Name="Info" ColumnName="Info" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Utilisateur">
+      <EntityTypeMapping TypeName="MaVideothequeModel.Utilisateur">
+        <MappingFragment StoreEntitySet="Utilisateur">
+          <ScalarProperty Name="MotDePasse" ColumnName="MotDePasse" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

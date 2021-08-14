@@ -1,0 +1,49 @@
+C:\Users\babac\source\repos\Multifenetrage\obj\Debug\MainWindow.g.cs
+C:\Users\babac\source\repos\Multifenetrage\obj\Debug\View\Authentification.g.cs
+C:\Users\babac\source\repos\Multifenetrage\obj\Debug\App.g.cs
+C:\Users\babac\source\repos\Multifenetrage\obj\Debug\Multifenetrage_MarkupCompile.cache
+C:\Users\babac\source\repos\Multifenetrage\obj\Debug\Multifenetrage_MarkupCompile.lref
+C:\Users\babac\source\repos\Multifenetrage\bin\Debug\Multifenetrage.exe.config
+C:\Users\babac\source\repos\Multifenetrage\bin\Debug\Multifenetrage.exe
+C:\Users\babac\source\repos\Multifenetrage\bin\Debug\Multifenetrage.pdb
+C:\Users\babac\source\repos\Multifenetrage\obj\Debug\MainWindow.baml
+C:\Users\babac\source\repos\Multifenetrage\obj\Debug\View\Authentification.baml
+C:\Users\babac\source\repos\Multifenetrage\obj\Debug\Multifenetrage.g.resources
+C:\Users\babac\source\repos\Multifenetrage\obj\Debug\Multifenetrage.Properties.Resources.resources
+C:\Users\babac\source\repos\Multifenetrage\obj\Debug\Multifenetrage.csproj.GenerateResource.cache
+C:\Users\babac\source\repos\Multifenetrage\obj\Debug\Multifenetrage.csproj.CoreCompileInputs.cache
+C:\Users\babac\source\repos\Multifenetrage\obj\Debug\Multifenetrage.exe
+C:\Users\babac\source\repos\Multifenetrage\obj\Debug\Multifenetrage.pdb
+C:\Users\babac\source\repos\Multifenetrage\obj\Debug\Multifenetrage.csprojAssemblyReference.cache
+C:\Users\babac\source\repos\Multifenetrage\obj\Debug\View\UserAdmin.g.cs
+C:\Users\babac\source\repos\Multifenetrage\obj\Debug\View\UserAdmin.baml
+C:\Users\maria\OneDrive\Bureau\Pojet WPF MVVM\Multifenetrage\bin\Debug\Multifenetrage.exe.config
+C:\Users\maria\OneDrive\Bureau\Pojet WPF MVVM\Multifenetrage\bin\Debug\Multifenetrage.exe
+C:\Users\maria\OneDrive\Bureau\Pojet WPF MVVM\Multifenetrage\bin\Debug\Multifenetrage.pdb
+C:\Users\maria\OneDrive\Bureau\Pojet WPF MVVM\Multifenetrage\bin\Debug\EntityFramework.dll
+C:\Users\maria\OneDrive\Bureau\Pojet WPF MVVM\Multifenetrage\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\maria\OneDrive\Bureau\Pojet WPF MVVM\Multifenetrage\bin\Debug\EntityFramework.xml
+C:\Users\maria\OneDrive\Bureau\Pojet WPF MVVM\Multifenetrage\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\maria\OneDrive\Bureau\Pojet WPF MVVM\Multifenetrage\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\maria\OneDrive\Bureau\Pojet WPF MVVM\Multifenetrage\obj\Debug\MainWindow.g.cs
+C:\Users\maria\OneDrive\Bureau\Pojet WPF MVVM\Multifenetrage\obj\Debug\View\Authentification.g.cs
+C:\Users\maria\OneDrive\Bureau\Pojet WPF MVVM\Multifenetrage\obj\Debug\View\Emprunt.g.cs
+C:\Users\maria\OneDrive\Bureau\Pojet WPF MVVM\Multifenetrage\obj\Debug\View\Film.g.cs
+C:\Users\maria\OneDrive\Bureau\Pojet WPF MVVM\Multifenetrage\obj\Debug\View\UserAdmin.g.cs
+C:\Users\maria\OneDrive\Bureau\Pojet WPF MVVM\Multifenetrage\obj\Debug\App.g.cs
+C:\Users\maria\OneDrive\Bureau\Pojet WPF MVVM\Multifenetrage\obj\Debug\Multifenetrage_Content.g.cs
+C:\Users\maria\OneDrive\Bureau\Pojet WPF MVVM\Multifenetrage\obj\Debug\Multifenetrage_MarkupCompile.cache
+C:\Users\maria\OneDrive\Bureau\Pojet WPF MVVM\Multifenetrage\obj\Debug\Multifenetrage_MarkupCompile.lref
+C:\Users\maria\OneDrive\Bureau\Pojet WPF MVVM\Multifenetrage\obj\Debug\MainWindow.baml
+C:\Users\maria\OneDrive\Bureau\Pojet WPF MVVM\Multifenetrage\obj\Debug\View\Authentification.baml
+C:\Users\maria\OneDrive\Bureau\Pojet WPF MVVM\Multifenetrage\obj\Debug\View\Emprunt.baml
+C:\Users\maria\OneDrive\Bureau\Pojet WPF MVVM\Multifenetrage\obj\Debug\View\Film.baml
+C:\Users\maria\OneDrive\Bureau\Pojet WPF MVVM\Multifenetrage\obj\Debug\View\UserAdmin.baml
+C:\Users\maria\OneDrive\Bureau\Pojet WPF MVVM\Multifenetrage\obj\Debug\Multifenetrage.g.resources
+C:\Users\maria\OneDrive\Bureau\Pojet WPF MVVM\Multifenetrage\obj\Debug\Multifenetrage.Properties.Resources.resources
+C:\Users\maria\OneDrive\Bureau\Pojet WPF MVVM\Multifenetrage\obj\Debug\Multifenetrage.csproj.GenerateResource.cache
+C:\Users\maria\OneDrive\Bureau\Pojet WPF MVVM\Multifenetrage\obj\Debug\Multifenetrage.csproj.CoreCompileInputs.cache
+C:\Users\maria\OneDrive\Bureau\Pojet WPF MVVM\Multifenetrage\obj\Debug\Multifenetrage.csproj.CopyComplete
+C:\Users\maria\OneDrive\Bureau\Pojet WPF MVVM\Multifenetrage\obj\Debug\Multifenetrage.exe
+C:\Users\maria\OneDrive\Bureau\Pojet WPF MVVM\Multifenetrage\obj\Debug\Multifenetrage.pdb
+C:\Users\maria\OneDrive\Bureau\Pojet WPF MVVM\Multifenetrage\obj\Debug\Multifenetrage.csprojAssemblyReference.cache

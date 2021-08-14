@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MaVideothequeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MaVideothequeEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Emprunt" EntityType="MaVideothequeModel.Emprunt" />
+    <EntitySet Name="Film" EntityType="MaVideothequeModel.Film" />
+    <EntitySet Name="FilmGenre" EntityType="MaVideothequeModel.FilmGenre" />
+    <EntitySet Name="FilmPays" EntityType="MaVideothequeModel.FilmPays" />
+    <EntitySet Name="Genre" EntityType="MaVideothequeModel.Genre" />
+    <EntitySet Name="PAYS" EntityType="MaVideothequeModel.PAYS" />
+    <EntitySet Name="Trace" EntityType="MaVideothequeModel.Trace" />
+    <EntitySet Name="Utilisateur" EntityType="MaVideothequeModel.Utilisateur" />
+    <AssociationSet Name="FK__Emprunt__IdFilm__5CD6CB2B" Association="MaVideothequeModel.FK__Emprunt__IdFilm__5CD6CB2B">
+      <End Role="Film" EntitySet="Film" />
+      <End Role="Emprunt" EntitySet="Emprunt" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Emprunt__IdUtili__5BE2A6F2" Association="MaVideothequeModel.FK__Emprunt__IdUtili__5BE2A6F2">
+      <End Role="Utilisateur" EntitySet="Utilisateur" />
+      <End Role="Emprunt" EntitySet="Emprunt" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FilmGenre__IdFil__5812160E" Association="MaVideothequeModel.FK__FilmGenre__IdFil__5812160E">
+      <End Role="Film" EntitySet="Film" />
+      <End Role="FilmGenre" EntitySet="FilmGenre" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FilmPays__IdFilm__52593CB8" Association="MaVideothequeModel.FK__FilmPays__IdFilm__52593CB8">
+      <End Role="Film" EntitySet="Film" />
+      <End Role="FilmPays" EntitySet="FilmPays" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FilmGenre__IdGen__59063A47" Association="MaVideothequeModel.FK__FilmGenre__IdGen__59063A47">
+      <End Role="Genre" EntitySet="Genre" />
+      <End Role="FilmGenre" EntitySet="FilmGenre" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FilmPays__IdPays__534D60F1" Association="MaVideothequeModel.FK__FilmPays__IdPays__534D60F1">
+      <End Role="PAYS" EntitySet="PAYS" />
+      <End Role="FilmPays" EntitySet="FilmPays" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Emprunt">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdUtilisateur" Type="Int32" />
+    <Property Name="IdFilm" Type="Int32" />
+    <Property Name="DateEmprunt" Type="DateTime" Precision="0" />
+    <Property Name="DateRetour" Type="DateTime" Precision="0" />
+    <Property Name="Statut" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Film" Relationship="MaVideothequeModel.FK__Emprunt__IdFilm__5CD6CB2B" FromRole="Emprunt" ToRole="Film" />
+    <NavigationProperty Name="Utilisateur" Relationship="MaVideothequeModel.FK__Emprunt__IdUtili__5BE2A6F2" FromRole="Emprunt" ToRole="Utilisateur" />
+  </EntityType>
+  <EntityType Name="Film">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Titre" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Summary" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Duree" Type="Int32" />
+    <Property Name="ActeurP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AutresActeurs" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="affiche" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Emprunt" Relationship="MaVideothequeModel.FK__Emprunt__IdFilm__5CD6CB2B" FromRole="Film" ToRole="Emprunt" />
+    <NavigationProperty Name="FilmGenre" Relationship="MaVideothequeModel.FK__FilmGenre__IdFil__5812160E" FromRole="Film" ToRole="FilmGenre" />
+    <NavigationProperty Name="FilmPays" Relationship="MaVideothequeModel.FK__FilmPays__IdFilm__52593CB8" FromRole="Film" ToRole="FilmPays" />
+  </EntityType>
+  <EntityType Name="FilmGenre">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdFilm" Type="Int32" />
+    <Property Name="IdGenre" Type="Int32" />
+    <NavigationProperty Name="Film" Relationship="MaVideothequeModel.FK__FilmGenre__IdFil__5812160E" FromRole="FilmGenre" ToRole="Film" />
+    <NavigationProperty Name="Genre" Relationship="MaVideothequeModel.FK__FilmGenre__IdGen__59063A47" FromRole="FilmGenre" ToRole="Genre" />
+  </EntityType>
+  <EntityType Name="FilmPays">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdFilm" Type="Int32" />
+    <Property Name="IdPays" Type="Int32" />
+    <Property Name="Info" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DateTournage" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Film" Relationship="MaVideothequeModel.FK__FilmPays__IdFilm__52593CB8" FromRole="FilmPays" ToRole="Film" />
+    <NavigationProperty Name="PAYS" Relationship="MaVideothequeModel.FK__FilmPays__IdPays__534D60F1" FromRole="FilmPays" ToRole="PAYS" />
+  </EntityType>
+  <EntityType Name="Genre">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Libelle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="FilmGenre" Relationship="MaVideothequeModel.FK__FilmGenre__IdGen__59063A47" FromRole="Genre" ToRole="FilmGenre" />
+  </EntityType>
+  <EntityType Name="PAYS">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Libelle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="FilmPays" Relationship="MaVideothequeModel.FK__FilmPays__IdPays__534D60F1" FromRole="PAYS" ToRole="FilmPays" />
+  </EntityType>
+  <EntityType Name="Trace">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Info" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Utilisateur">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Prenom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MotDePasse" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Emprunt" Relationship="MaVideothequeModel.FK__Emprunt__IdUtili__5BE2A6F2" FromRole="Utilisateur" ToRole="Emprunt" />
+  </EntityType>
+  <Association Name="FK__Emprunt__IdFilm__5CD6CB2B">
+    <End Type="MaVideothequeModel.Film" Role="Film" Multiplicity="0..1" />
+    <End Type="MaVideothequeModel.Emprunt" Role="Emprunt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Film">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Emprunt">
+        <PropertyRef Name="IdFilm" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Emprunt__IdUtili__5BE2A6F2">
+    <End Type="MaVideothequeModel.Utilisateur" Role="Utilisateur" Multiplicity="0..1" />
+    <End Type="MaVideothequeModel.Emprunt" Role="Emprunt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Utilisateur">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Emprunt">
+        <PropertyRef Name="IdUtilisateur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FilmGenre__IdFil__5812160E">
+    <End Type="MaVideothequeModel.Film" Role="Film" Multiplicity="0..1" />
+    <End Type="MaVideothequeModel.FilmGenre" Role="FilmGenre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Film">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FilmGenre">
+        <PropertyRef Name="IdFilm" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FilmPays__IdFilm__52593CB8">
+    <End Type="MaVideothequeModel.Film" Role="Film" Multiplicity="0..1" />
+    <End Type="MaVideothequeModel.FilmPays" Role="FilmPays" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Film">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FilmPays">
+        <PropertyRef Name="IdFilm" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FilmGenre__IdGen__59063A47">
+    <End Type="MaVideothequeModel.Genre" Role="Genre" Multiplicity="0..1" />
+    <End Type="MaVideothequeModel.FilmGenre" Role="FilmGenre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genre">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FilmGenre">
+        <PropertyRef Name="IdGenre" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FilmPays__IdPays__534D60F1">
+    <End Type="MaVideothequeModel.PAYS" Role="PAYS" Multiplicity="0..1" />
+    <End Type="MaVideothequeModel.FilmPays" Role="FilmPays" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAYS">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FilmPays">
+        <PropertyRef Name="IdPays" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,55 @@
+﻿<Page x:Class="Multifenetrage.View.Emprunt"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Multifenetrage.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Emprunt" Background="#FFB2F7B9" Height="339" Width="562">
+
+    <Grid>
+        <Label Content="Utilisateur" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Film" HorizontalAlignment="Left" Margin="26,56,0,0" VerticalAlignment="Top"/>
+        <ComboBox ItemsSource="{Binding ListeUtilisateurs}" DisplayMemberPath="Nom" SelectedValue="{Binding UtilisateurSelectionne}" HorizontalAlignment="Left" Margin="93,14,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox ItemsSource="{Binding ListeFilms}" DisplayMemberPath="Titre" SelectedValue="{Binding FilmSelectionne}" HorizontalAlignment="Left" Margin="93,60,0,0" VerticalAlignment="Top" Width="120"/>
+
+        <ListBox ItemsSource="{Binding ListeDesFilmsSelectionnes}" SelectedValue="{Binding FilmARetirer}" HorizontalAlignment="Left" Height="33" Margin="10,106,0,0" VerticalAlignment="Top" Width="272">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{Binding Path=Titre}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <ListBox.ItemsPanel>                <ItemsPanelTemplate>                    <VirtualizingStackPanel Orientation="Horizontal"/>                </ItemsPanelTemplate>            </ListBox.ItemsPanel>
+        </ListBox>
+
+        <Label Content="Emprunt" HorizontalAlignment="Left" Margin="300,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Retour" HorizontalAlignment="Left" Margin="310,56,0,0" VerticalAlignment="Top"/>
+        <DatePicker SelectedDate="{Binding Emprunt.DateEmprunt}" HorizontalAlignment="Left" Margin="384,12,0,0" VerticalAlignment="Top"/>
+        <DatePicker SelectedDate="{Binding Emprunt.DateRetour}" HorizontalAlignment="Left" Margin="384,56,0,0" VerticalAlignment="Top"/>
+
+        <Label Content="Statut" HorizontalAlignment="Left" Margin="310,106,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.026,0.615"/>
+        <ComboBox  SelectedValue="{Binding Emprunt.Statut }" HorizontalAlignment="Left" Margin="413,110,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem>Bon état</ComboBoxItem>
+            <ComboBoxItem>Moyen</ComboBoxItem>
+            <ComboBoxItem>Mauvais</ComboBoxItem>
+        </ComboBox>
+        <Button Command="{Binding AjoutEmprunt}" CommandParameter="{Binding Emprunt}" Content="Enregistrer" HorizontalAlignment="Left" Margin="10,153,0,0" VerticalAlignment="Top" Width="75"/>
+        
+        <ListView ItemsSource="{Binding ListeEmprunts}" HorizontalAlignment="Left" Height="122" Margin="10,207,0,0" VerticalAlignment="Top" Width="542">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}" Width="50"/>
+                    <GridViewColumn Header="IdUtilisateur" DisplayMemberBinding="{Binding IdUtilisateur}"/>
+                    <GridViewColumn Header="IdFilm"  DisplayMemberBinding="{Binding IdFilm}"/>
+                    <GridViewColumn Header="DateEmprunt"  DisplayMemberBinding="{Binding DateEmprunt}"/>
+                    <GridViewColumn Header="DateRetour"  DisplayMemberBinding="{Binding DateRetour}"/>
+                    <GridViewColumn Header="Statut"  DisplayMemberBinding="{Binding Statut}" Width="50"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</Page>
